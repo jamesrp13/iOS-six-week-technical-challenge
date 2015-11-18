@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1ABD3AF41BFD1CD600544104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3AF31BFD1CD600544104 /* AppDelegate.swift */; };
-		1ABD3AF61BFD1CD600544104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3AF51BFD1CD600544104 /* ViewController.swift */; };
 		1ABD3AF91BFD1CD600544104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABD3AF71BFD1CD600544104 /* Main.storyboard */; };
 		1ABD3AFB1BFD1CD600544104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABD3AFA1BFD1CD600544104 /* Assets.xcassets */; };
 		1ABD3AFE1BFD1CD600544104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABD3AFC1BFD1CD600544104 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,7 @@
 		1ABD3B2D1BFD1DEB00544104 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3B2C1BFD1DEB00544104 /* Stack.swift */; };
 		1ABD3B2F1BFD1F3E00544104 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3B2E1BFD1F3E00544104 /* PersonController.swift */; };
 		1ABD3B311BFD1F4700544104 /* PairController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3B301BFD1F4700544104 /* PairController.swift */; };
+		1ABD3B351BFD29E700544104 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABD3B341BFD29E700544104 /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 /* Begin PBXFileReference section */
 		1ABD3AF01BFD1CD600544104 /* PairRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PairRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABD3AF31BFD1CD600544104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1ABD3AF51BFD1CD600544104 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1ABD3AF81BFD1CD600544104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1ABD3AFA1BFD1CD600544104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ABD3AFD1BFD1CD600544104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		1ABD3B2C1BFD1DEB00544104 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		1ABD3B2E1BFD1F3E00544104 /* PersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		1ABD3B301BFD1F4700544104 /* PairController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairController.swift; sourceTree = "<group>"; };
+		1ABD3B341BFD29E700544104 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = ../ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 				1ABD3B331BFD1F6F00544104 /* Model */,
 				1ABD3B321BFD1F5600544104 /* ModelControllers */,
 				1ABD3AF31BFD1CD600544104 /* AppDelegate.swift */,
-				1ABD3AF51BFD1CD600544104 /* ViewController.swift */,
+				1ABD3B341BFD29E700544104 /* ListTableViewController.swift */,
 				1ABD3AF71BFD1CD600544104 /* Main.storyboard */,
 				1ABD3AFA1BFD1CD600544104 /* Assets.xcassets */,
 				1ABD3AFC1BFD1CD600544104 /* LaunchScreen.storyboard */,
@@ -304,8 +304,8 @@
 				1ABD3B291BFD1DE100544104 /* Person.swift in Sources */,
 				1ABD3B2F1BFD1F3E00544104 /* PersonController.swift in Sources */,
 				1ABD3B2A1BFD1DE100544104 /* Pair+CoreDataProperties.swift in Sources */,
+				1ABD3B351BFD29E700544104 /* ListTableViewController.swift in Sources */,
 				1ABD3B281BFD1DE100544104 /* Person+CoreDataProperties.swift in Sources */,
-				1ABD3AF61BFD1CD600544104 /* ViewController.swift in Sources */,
 				1ABD3B2D1BFD1DEB00544104 /* Stack.swift in Sources */,
 				1ABD3AF41BFD1CD600544104 /* AppDelegate.swift in Sources */,
 				1ABD3B2B1BFD1DE100544104 /* Pair.swift in Sources */,
