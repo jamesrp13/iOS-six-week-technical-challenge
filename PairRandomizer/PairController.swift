@@ -33,4 +33,8 @@ class PairController {
         }
     }
     
+    func unPair() {
+        pairs = []
+    }
+    
 }

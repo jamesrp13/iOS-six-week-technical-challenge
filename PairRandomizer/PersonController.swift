@@ -18,7 +18,7 @@ class PersonController {
         let request = NSFetchRequest(entityName: "Person")
         do {
             let people = try moc.executeFetchRequest(request) as! [Person]
-            return people.sort { $0.lastName > $1.lastName }
+            return people.sort { $0.lastName < $1.lastName }
         } catch {
             print("Error loading: \(error)")
             return []
@@ -39,6 +39,12 @@ class PersonController {
             try moc.save()
         } catch {
             print("Error saving: \(error)")
+        }
+    }
+    
+    func clear() {
+        for person in people {
+            deletePerson(person)
         }
     }
     
