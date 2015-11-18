@@ -12,6 +12,8 @@ class ListTableViewController: UITableViewController {
 
     var paired = false
     
+    @IBOutlet weak var pairButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,26 +61,39 @@ class ListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            tableView.beginUpdates()
+            PersonController.sharedInstance.deletePerson(PersonController.sharedInstance.people[indexPath.row])
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            tableView.endUpdates()
+            
+        }
+    }
 
 }
 
 extension ListTableViewController {
     
     @IBAction func pairButtonTapped(sender: AnyObject) {
-        paired = true
-        PairController.sharedInstance.generateRandomPairs(PersonController.sharedInstance.people)
-        tableView.reloadData()
-    }
-    
-    @IBAction func unpairButtonTapped(sender: AnyObject) {
-        PairController.sharedInstance.unPair()
-        paired = false
-        tableView.reloadData()
+        if paired {
+            PairController.sharedInstance.unPair()
+            paired = false
+            tableView.reloadData()
+            pairButton.setTitle("Pair", forState: .Normal)
+        } else {
+            paired = true
+            PairController.sharedInstance.generateRandomPairs(PersonController.sharedInstance.people)
+            tableView.reloadData()
+            pairButton.setTitle("Unpair", forState: .Normal)
+        }
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
         if paired {
-            unpairButtonTapped(self)
+            pairButtonTapped(self)
         } else {
             PersonController.sharedInstance.clear()
             tableView.reloadData()
@@ -86,7 +101,7 @@ extension ListTableViewController {
     }
     
     @IBAction func addButtonTapped(sender: AnyObject) {
-        let alert = UIAlertController(title: "Please input a first and last name", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Add Person", message: "Please input a first and last name", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField1) -> Void in
             textField1.placeholder = "First name..."
         }
@@ -94,10 +109,22 @@ extension ListTableViewController {
             textField2.placeholder = "Last name..."
         }
         alert.addAction(UIAlertAction(title: "Add Person", style: .Default, handler: { (add) -> Void in
-            Person(firstName: (alert.textFields?.first?.text)!, lastName: (alert.textFields?.last?.text)!)
+            guard let firstName = alert.textFields?.first?.text,
+                let lastName = alert.textFields?.last?.text where
+                firstName.characters.count > 0 && lastName.characters.count > 0 else {self.alertForNoName(); return}
+            
+            let _ = Person(firstName: firstName, lastName: lastName)
             PersonController.sharedInstance.saveToPersistentStore()
             self.tableView.reloadData()
         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func alertForNoName() {
+        let alert = UIAlertController(title: "Invalid Entry", message: "You must input both a first and last name", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
     

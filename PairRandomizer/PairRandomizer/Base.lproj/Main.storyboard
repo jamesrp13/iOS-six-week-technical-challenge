@@ -18,20 +18,12 @@
                             <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkA-cO-nBe">
-                                    <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkA-cO-nBe">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <animations/>
                                     <state key="normal" title="Pair"/>
                                     <connections>
                                         <action selector="pairButtonTapped:" destination="lHJ-mO-f1x" eventType="touchUpInside" id="Gpw-vm-iUq"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKn-xh-o7u">
-                                    <rect key="frame" x="160" y="0.0" width="160" height="44"/>
-                                    <animations/>
-                                    <state key="normal" title="Unpair"/>
-                                    <connections>
-                                        <action selector="unpairButtonTapped:" destination="lHJ-mO-f1x" eventType="touchUpInside" id="xQX-nN-xNA"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -76,6 +68,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pairButton" destination="AkA-cO-nBe" id="Qfv-F2-bjl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqr-GD-ZBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
